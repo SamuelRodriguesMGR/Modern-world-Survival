@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dpriim864ub7o"]
+
+[ext_resource type="PackedScene" uid="uid://squb4dsvjbsg" path="res://environment/bed.tscn" id="1_v323m"]
+[ext_resource type="Texture2D" uid="uid://jyavt7q088hv" path="res://Sprites/bed1.png" id="2_u4wus"]
+
+[node name="bed" instance=ExtResource("1_v323m")]
+z_index = 2
+y_sort_enabled = true
+
+[node name="Sprite2D" parent="." index="2"]
+position = Vector2(0, -3)
+texture = ExtResource("2_u4wus")
+
+[node name="CollisionPolygon2D" parent="." index="3"]
+polygon = PackedVector2Array(-12, 0, -12, -3, -6, -7, -2, -7, 12, 0, 12, 4, 6, 7, 2, 7)

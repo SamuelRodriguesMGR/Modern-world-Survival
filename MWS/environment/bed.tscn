@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://squb4dsvjbsg"]
+
+[ext_resource type="PackedScene" uid="uid://5xsb14l2nrao" path="res://environment/thing_of_home.tscn" id="1_ooxqg"]
+[ext_resource type="Texture2D" uid="uid://blkhi71jr413g" path="res://Sprites/bed.png" id="2_43lm1"]
+[ext_resource type="Script" path="res://environment/bed.gd" id="2_b7lou"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_x5s3u"]
+radius = 13.0
+
+[node name="bed" instance=ExtResource("1_ooxqg")]
+script = ExtResource("2_b7lou")
+
+[node name="CollisionShape2D" parent="playerNearby" index="0"]
+shape = SubResource("CircleShape2D_x5s3u")
+
+[node name="CollisionPolygon2D" parent="Area2D" index="0"]
+polygon = PackedVector2Array(-12, 0, -12, -3, -6, -7, -2, -7, 12, 0, 12, 4, 6, 7, 2, 7)
+
+[node name="Sprite2D" parent="." index="2"]
+texture = ExtResource("2_43lm1")
+
+[node name="Timer" parent="." index="4"]
+wait_time = 5.0

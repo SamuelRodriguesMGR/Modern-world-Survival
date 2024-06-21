@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://ffmchpolxrii"]
+
+[ext_resource type="Script" path="res://UI/ui.gd" id="1_doqb0"]
+[ext_resource type="Texture2D" uid="uid://df8uiq1k03q7m" path="res://Sprites/over_bar.png" id="1_ofg5s"]
+[ext_resource type="Texture2D" uid="uid://kwivlihewpvh" path="res://Sprites/progress_bar.png" id="2_4f11p"]
+
+[node name="UI" type="CanvasLayer"]
+script = ExtResource("1_doqb0")
+
+[node name="sleepScale" type="TextureProgressBar" parent="."]
+offset_left = 5.0
+offset_top = 4.0
+offset_right = 108.0
+offset_bottom = 20.0
+max_value = 64.0
+value = 63.0
+nine_patch_stretch = true
+texture_over = ExtResource("1_ofg5s")
+texture_progress = ExtResource("2_4f11p")

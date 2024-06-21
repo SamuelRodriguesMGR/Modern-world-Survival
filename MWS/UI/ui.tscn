@@ -1,0 +1,49 @@
+[gd_scene load_steps=5 format=3 uid="uid://ffmchpolxrii"]
+
+[ext_resource type="Script" path="res://UI/ui.gd" id="1_doqb0"]
+[ext_resource type="Texture2D" uid="uid://df8uiq1k03q7m" path="res://Sprites/over_bar.png" id="1_ofg5s"]
+[ext_resource type="Texture2D" uid="uid://kwivlihewpvh" path="res://Sprites/progress_bar.png" id="2_4f11p"]
+[ext_resource type="Texture2D" uid="uid://dyg2a8mdf17ht" path="res://Sprites/table.png" id="2_kin13"]
+
+[node name="UI" type="CanvasLayer"]
+script = ExtResource("1_doqb0")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 8.0
+offset_top = 6.0
+offset_right = 58.0
+offset_bottom = 44.0
+texture = ExtResource("2_kin13")
+
+[node name="sleepScale" type="TextureProgressBar" parent="TextureRect"]
+layout_mode = 0
+offset_right = 50.0
+offset_bottom = 18.0
+max_value = 30.0
+value = 30.0
+texture_over = ExtResource("1_ofg5s")
+texture_progress = ExtResource("2_4f11p")
+
+[node name="Timer" type="Timer" parent="TextureRect/sleepScale"]
+wait_time = 24.0
+autostart = true
+
+[node name="funScale" type="TextureProgressBar" parent="TextureRect"]
+layout_mode = 0
+offset_right = 50.0
+offset_bottom = 18.0
+max_value = 30.0
+value = 30.0
+texture_over = ExtResource("1_ofg5s")
+texture_progress = ExtResource("2_4f11p")
+
+[node name="hungerScale" type="TextureProgressBar" parent="TextureRect"]
+layout_mode = 0
+offset_right = 50.0
+offset_bottom = 18.0
+max_value = 30.0
+value = 30.0
+texture_over = ExtResource("1_ofg5s")
+texture_progress = ExtResource("2_4f11p")
+
+[connection signal="timeout" from="TextureRect/sleepScale/Timer" to="." method="_on_timer_timeout"]
